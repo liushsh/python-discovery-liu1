@@ -1,3 +1,7 @@
+declared-services:
+  Discovery-lj:
+    label: discovery
+    plan: free
 applications:
 - path: .
   memory: 128M
@@ -6,3 +10,5 @@ applications:
   name: python-discovery-liu1
   host: python-discovery-liu1
   disk_quota: 1024M
+  services:
+  - Discovery-lj
