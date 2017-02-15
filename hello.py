@@ -58,6 +58,13 @@ def discovery_v1():
     print(default_config_id)
     return_str = return_str + "<br>\n"+str(default_config_id)
     
+    
+    if (discovery.get_environment(environment_id=news_environment_id)['status'] == 'active'):
+    writable_environment_id = news_environment_id
+    new_collection = discovery.create_collection(environment_id=writable_environment_id,
+                                                name='Example Collection',
+                                                description="just a test")
+    
 
     default_config = discovery.get_configuration(environment_id=news_environment_id, configuration_id=default_config_id)
     print(default_config)
