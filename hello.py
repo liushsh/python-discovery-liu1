@@ -60,8 +60,8 @@ def discovery_v1():
     
     
     if (discovery.get_environment(environment_id=news_environment_id)['status'] == 'active'):
-    writable_environment_id = news_environment_id
-    new_collection = discovery.create_collection(environment_id=writable_environment_id,
+        writable_environment_id = news_environment_id
+        new_collection = discovery.create_collection(environment_id=writable_environment_id,
                                                 name='Example Collection',
                                                 description="just a test")
     
