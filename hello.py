@@ -57,6 +57,10 @@ def discovery_v1():
     default_config_id = discovery.get_default_configuration_id(environment_id=news_environment_id)
     print(default_config_id)
     return_str = return_str + "<br>\n"+str(default_config_id)
+   
+    default_config = discovery.get_configuration(environment_id=news_environment_id, configuration_id=default_config_id)
+    print(default_config)
+    return_str = return_str + "<br>\n"+str(default_config)
     
     new_environment = discovery.create_environment(name="new env", description="bogus env")
     
@@ -66,11 +70,8 @@ def discovery_v1():
                                                 name='Example Collection',
                                                 description="just a test")
         print(new_collection)
-    
-
-    default_config = discovery.get_configuration(environment_id=news_environment_id, configuration_id=default_config_id)
-    print(default_config)
-    return_str = return_str + "<br>\n"+str(default_config)
+        
+    return_str = return_str + "<br>\n"+str(new_collection)
     
     return return_str
     
