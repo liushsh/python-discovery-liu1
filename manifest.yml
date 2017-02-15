@@ -1,0 +1,8 @@
+applications:
+- path: .
+  memory: 128M
+  instances: 1
+  domain: mybluemix.net
+  name: python-discovery-liu1
+  host: python-discovery-liu1
+  disk_quota: 1024M
