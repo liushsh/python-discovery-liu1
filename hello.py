@@ -62,11 +62,11 @@ def discovery_v1():
     print(default_config)
     return_str = return_str + "<br>\n"+str(default_config)
     
-    # new_environment = discovery.create_environment(name="new env", description="bogus env")
+    new_environment = discovery.create_environment(name="new env", description="bogus env")
     
-   # if (discovery.get_environment(environment_id=new_environment['environment_id'])['status'] == 'active'):
-   #     writable_environment_id = new_environment['environment_id']
-    new_collection = discovery.create_collection(environment_id=news_environment_id,
+    if (discovery.get_environment(environment_id=new_environment['environment_id'])['status'] == 'active'):
+        writable_environment_id = new_environment['environment_id']
+        new_collection = discovery.create_collection(environment_id=writable_environment_id,
                                                 name='Example_Collection',
                                                 description="just a test")
     print(new_collection)
